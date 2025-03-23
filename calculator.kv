@@ -115,11 +115,22 @@
                 points: [self.x, self.y, self.right, self.y]  # Horizontal line
                 width: 1
 
-    Label:
-        id: result_label
-        text: "Result: "
-        font_size: 28
-        size_hint_x: 0.5
+    BoxLayout:
         size_hint_y: None
-        height: 40
-        padding: [10, 10]  # Add padding around the text
+        height: 40  # Adjust height as needed
+        spacing: 10  # Adds some space between "Result:" and the value
+
+        Label:
+            text: "Result: "
+            font_size: 28
+            size_hint_x: None  # Fix width to prevent shifting
+            width: 120  # Adjust width as needed
+
+        Label:
+            id: result_label
+            text: ""  # Start empty, updated dynamically
+            font_size: 28
+            size_hint_x: None  # Keep width flexible
+            width: 200  # Adjust width to fit results properly
+
+

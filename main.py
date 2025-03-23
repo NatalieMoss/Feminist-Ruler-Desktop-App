@@ -29,7 +29,7 @@ class CalculatorLayout(BoxLayout):
             inches = float(Fraction(inches_text)) if inches_text else 0
             decimal_feet = feet + (inches / 12)
             result = decimal_feet * 1.207
-            self.ids.result_label.text = f"Result: {result:.3f} nefeet"
+            self.ids.result_label.text = f" {result:.3f} nefeet"
         except ValueError:
             self.ids.result_label.text = "Invalid input"
 
