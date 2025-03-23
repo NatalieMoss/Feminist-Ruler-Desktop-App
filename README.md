@@ -2,6 +2,8 @@
 
 This project includes a Kivy-based app that allows you to convert imperial measurements (feet and inches), which are based on the length of King Henry I's foot length, to a new unit of measure called the nefeet. The nefeet is based on the length of Queen Nefertiti's feet. Now go forth and remeasure your world with a feminist ruler!
 
+ ![App Screenshot](Feminist_Ruler_Desktop_App.png)
+
 ### How to Run the Kivy App
 
 Follow these instructions to get the Kivy app running on your local machine:
@@ -22,6 +24,6 @@ The Kivy app is located in the `/kivy_app` directory, and includes the following
 - `main.py` (Python script for the app logic)
 - `calculator.kv` (Kivy language file for the layout)
 
-  ![App Screenshot](C:\Users\PCCStudent\Pictures\Screenshots\Feminist_Ruler_Desktop_App.png)
+ 
 
 
