@@ -1,0 +1,97 @@
+
+<CalculatorLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+    size_hint: 1, 1  # Fills entire layout
+    height: self.minimum_height  # Shrinks to fit content
+
+    Image:
+        source: "assets/Nefertiti.png"  # Path to your image
+        size_hint_y: None
+        height: 300  # Adjust image height
+        allow_stretch: True  # Allows resizing while maintaining aspect ratio
+        keep_ratio: True  # Prevents distortion
+
+    Label:
+        text: "Foot Distance Rematriation Calculator"
+        font_size: 24
+        bold: False
+        size_hint_y: None
+        height: 40
+
+    Label:  # Spacer
+        text: ""
+        size_hint_y: None
+        height: 10  # Space between labels
+
+    Label:
+        text: "Enter a distance in imperial feet and inches (King Henry I feet) and convert to nefeet (Queen Nefertiti's feet)"
+        font_size: 18
+        markup: True
+        shorten: True
+        ellipsis_options: {'color':(1,0.5,0.5,1),'underline':True}
+
+    Label:  # Spacer
+        text: ""
+        size_hint_y: None
+        height: 20  # Space between labels
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        spacing: 10
+
+        Label:
+            text: "Feet:"
+            font_size: 20
+            size_hint_x: None
+            width: 80
+
+        TextInput:
+            id: feet_input
+            text: ""
+            font_size: 20
+            multiline: False
+            input_filter: "int"  # Restricts input to integers
+            size_hint_x: 0.5
+
+        Label:
+            text: ""
+            font_size: 18
+            size_hint_x: None
+            width: 30
+
+        Label:
+            text: "Inches:"
+            font_size: 20
+            size_hint_x: None
+            width: 100
+
+        TextInput:
+            id: inches_input
+            text: ""
+            font_size: 20
+            multiline: False
+            size_hint_x: 0.5  # Allows fractions and decimals
+
+        Label:
+            text: "you can enter decimals or fractions (3.25 or 3 1/4)"
+            font_size: 18
+            size_hint_x: None
+            width: 400
+
+    Button:
+        text: "convert to nefeet"
+        font_size: 20
+        size_hint_y: None
+        height: 50
+        background_color: 1.0, 0.8431, 0.0, 1  # Light gold color
+        on_press: root.convert()
+
+    Label:
+        id: result_label
+        text: "Result: "
+        font_size: 20
+        size_hint_y: None
+        height: 40
