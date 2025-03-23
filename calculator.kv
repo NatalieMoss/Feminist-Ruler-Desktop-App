@@ -1,4 +1,3 @@
-
 <CalculatorLayout>:
     orientation: 'vertical'
     padding: 20
@@ -60,7 +59,7 @@
             text: ""
             font_size: 18
             size_hint_x: None
-            width: 30
+            width: 20
 
         Label:
             text: "Inches:"
@@ -76,22 +75,51 @@
             size_hint_x: 0.5  # Allows fractions and decimals
 
         Label:
-            text: "you can enter decimals or fractions (3.25 or 3 1/4)"
+            text: "enter decimals or fractions (e.g., 3.25 or 3 1/4)"
             font_size: 18
             size_hint_x: None
             width: 400
 
-    Button:
-        text: "convert to nefeet"
-        font_size: 20
+    BoxLayout:
         size_hint_y: None
         height: 50
-        background_color: 1.0, 0.8431, 0.0, 1  # Light gold color
-        on_press: root.convert()
+        spacing: 10
+
+        Label:
+            text: ""
+            font_size: 18
+            size_hint: 1, 1
+            width: 250
+
+        Button:
+            text: "CONVERT TO NEFEET"
+            font_size: 20
+            size_hint: 1, 1
+            height: 50
+            background_color: 1.0, 0.8431, 0.0, 1  # Light gold color
+            on_press: root.convert()
+
+        Label:
+            text: ""
+            font_size: 18
+            size_hint: 1, 1
+            width: 250
+
+    BoxLayout:
+        size_hint_y: None
+        height: 10  # Space for the line
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1  # White color
+            Line:
+                points: [self.x, self.y, self.right, self.y]  # Horizontal line
+                width: 1
 
     Label:
         id: result_label
         text: "Result: "
-        font_size: 20
+        font_size: 28
+        size_hint_x: 0.5
         size_hint_y: None
         height: 40
+        padding: [10, 10]  # Add padding around the text

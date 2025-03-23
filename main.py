@@ -1,18 +1,18 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kivy.graphics import Color, Rectangle
+from kivy.graphics import Color, Rectangle, Line
 from kivy.lang import Builder
 from fractions import Fraction
 
 class CalculatorLayout(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.result_label_background = Rectangle(size=(200, 40), pos=(0, 0))  # Adjust the size
+        # Set the canvas instructions for the background color and border
         with self.canvas.before:
-            # Set the background color of the entire layout
-            Color(0.0157, 0.2863, 0.2667, 1)  # RGB for a light blue color, last value is alpha (opacity)
-            self.rect = Rectangle(size=self.size, pos=self.pos)  # Cover the entire layout area
+            Color(0.0157, 0.2863, 0.2667, 1)  # green
+            self.rect = Rectangle(size=self.size, pos=self.pos)
 
-        # Bind the `on_size` event to update the background rectangle size when the window is resized
         self.bind(size=self._update_rect, pos=self._update_rect)
 
     def _update_rect(self, instance, value):
